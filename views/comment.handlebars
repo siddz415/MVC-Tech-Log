@@ -1,0 +1,24 @@
+<div class="comments">
+  {{#each this}}
+  <section class="comment">
+    <div class="meta">
+      {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>
+
+
+
+
+{{!-- tutor code --}}
+<div>
+  {{#each posts as |post|}}
+  <h3>{post.title}</h3>
+  <p>Written by {post.author}</p>
+  <p>{post.description}</p>
+  {{/each}}
+</div>
