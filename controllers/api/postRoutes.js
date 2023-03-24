@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Project } = require('../../models');
 
 router.post('/', async (req, res) => {
+  console.log(req.body);
   try {
     const newProject = await Project.create({
       ...req.body,
@@ -24,7 +25,7 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (!projectData) {
-      res.status(404).json({ message: 'No project found with this id!' });
+      res.status(404).json({ message: 'No post found with this id!' });
       return;
     }
 

@@ -11,4 +11,10 @@ const projects = projectData.map(project => project.get({plain: true}))
 router.get('/login', (req, res)=> {
   res.render('login')
 })
+router.get('/dashboard', (req, res)=> {
+  res.render('dashboard')
+})
+router.get('/comment', (req, res)=> {
+  res.render('comment')
+})
 module.exports = router;
