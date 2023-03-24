@@ -1,17 +1,22 @@
 [
   {
     "name": "What is MVC",
-    "description": "The Model-View-Controller (MVC) is an architectural pattern that separates an application into three main logical components: the model, the view, and the controller. Each of these components are built to handle specific development aspects of an application.The Model component corresponds to all the data-related logic that the user works with. This can represent either the data that is being transferred between the View and Controller components or any other business logic-related data. For example, a Customer object will retrieve the customer information from the database, manipulate it and update it data back to the database or use it to render data."
-    
+    "description": "The Model-View-Controller (MVC) is an architectural pattern that separates an application into three main logical components: the model, the view, and the controller."
   },
   {
     "name": "Introduction to Handlebars",
-    "description": "Handlebars.js is a popular templating engine that is powerful, simple to use and has a large community. It is based on the Mustache template language, but improves it in several important ways. With Handlebars, you can separate the generation of HTML from the rest of your JavaScript and write cleaner code. Adding handlebars to your project is pretty straightforward. Just go to http://handlebarsjs.com/ , and click the download button to get the latest version. At the moment of writing, this is version 2.0.0. Now all you have to do is to include the library in your html with a regular <script> tag."
-    
+    "description": "Handlebars.js is a popular templating engine that is powerful, simple to use and has a large community."
   },
   {
     "name": "Understanding Object-Relational Mapping",
-    "description": "One of the challenges of using object-oriented programming (OOP) languages and databases is the complexity of aligning the programming code with database structures. Object-relational mapping (ORM) is a technique that creates a layer between the language and the database, helping programmers work with data without the OOP paradigm.The challenge OOP developers have is the need to understand and code in the structured query language (SQL) in order to connect their application to an SQL database. Developers who know SQL can write data-access code. This raw SQL coding can be extremely time-consuming because it requires the developer to extract the code strings data elements. SQL query builders add a layer of abstraction to the SQL code to provide more information about the data. However, developers still need to understand and write SQL."
-    
+    "description": "One of the challenges of using object-oriented programming (OOP) languages and databases is the complexity of aligning the programming code with database structures."
+  },
+  {
+    "name": "Understanding Object-Relational Mapping",
+    "description": "One of the challenges of using object-oriented programming (OOP) languages and databases is the complexity of aligning the programming code with database structures."
+  },
+  {
+    "name": "Understanding Object-Relational Mapping",
+    "description": "One of the challenges of using object-oriented programming (OOP) languages and databases is the complexity of aligning the programming code with database structures."
   }
 ]
