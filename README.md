@@ -18,5 +18,6 @@ links
 ![Screenshot of the Site](./assets/tech.png) 
 
 ## links
+https://techblogss.herokuapp.com/
 ## github
 https://github.com/siddz415/MVC-Tech-Log

@@ -11,6 +11,9 @@ const projects = projectData.map(project => project.get({plain: true}))
 router.get('/login', (req, res)=> {
   res.render('login')
 })
+router.get('/signup', (req, res)=> {
+  res.render('signup')
+})
 router.get('/dashboard', (req, res)=> {
   res.render('dashboard')
 })
