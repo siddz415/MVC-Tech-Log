@@ -11,12 +11,20 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    project_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'project',
+        key: 'id'
+      }
+    },
+    comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
+        validate: {
+            len: [1]
+        }
     },
     date_created: {
       type: DataTypes.DATE,

@@ -5,13 +5,13 @@
   </h2>
   <form class="edit-post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{format_url post.post_url}})</span>
+      <input name="project-name" type="text" value="{{project.name}}" />
+      <span>({{format_url project.project_url}})</span>
     </div>
     <div>
-      {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
+      {{project.vote_count}} {{format_plural "point" project.vote_count}} by you on {{format_date post.created_at}}
       |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <a href="/post/{{project.id}}">{{project.comments.length}} {{format_plural "comment" project.comments.length}}</a>
     </div>
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
