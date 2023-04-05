@@ -1,9 +1,9 @@
 <!-- displaying articles -->
-{{> post-info project}}
+{{!-- {{> post-info project}}
 
 <!-- displaying form and comments-->
 <!-- only display if logged in -->
-{{#if loggedIn}}
+{{#if loggedIn}} --}}
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
@@ -14,10 +14,10 @@
     <button type="button" class="upvote-btn">upvote</button>
   </div>
 </form>
-{{/if}}
+{{!-- {{/if}} --}}
 
-{{> comments project.comments}}
+{{!-- {{> comments project.comments}}
 
-{{#if loggedIn}}
+{{#if loggedIn}} --}}
 <script src="/js/comment.js"></script>
-{{/if}}
+{{!-- {{/if}} --}}

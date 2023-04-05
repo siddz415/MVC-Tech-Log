@@ -45,7 +45,7 @@ router.get('/project/:id', async (req, res) => {
 
     const project = projectData.get({ plain: true });
     console.log("project - dashboard", project)
-    res.render('comment', {
+    res.render("singlePost", {  //singlepost handlebar
       ...project,
       logged_in: req.session.logged_in
     });
