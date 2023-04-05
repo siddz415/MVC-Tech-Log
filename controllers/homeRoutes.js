@@ -18,9 +18,9 @@ router.get('/', async (req, res) => {
     const projects = projectData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      projects, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      projects,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -38,13 +38,13 @@ router.get('/project/:id', async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['username'],
+          attributes: ['comment_text', 'date_created'],
         },
       ],
     });
 
     const project = projectData.get({ plain: true });
-    console.log("project - dashboard",project)
+    console.log("project - dashboard", project)
     res.render('comment', {
       ...project,
       logged_in: req.session.logged_in
