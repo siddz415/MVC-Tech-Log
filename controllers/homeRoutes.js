@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Project, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -28,6 +28,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/project/:id', async (req, res) => {
+  console.log('work', req.params.id);
   try {
     const projectData = await Project.findByPk(req.params.id, {
       include: [
@@ -35,22 +36,28 @@ router.get('/project/:id', async (req, res) => {
           model: User,
           attributes: ['username'],
         },
+        {
+          model: Comment,
+          attributes: ['username'],
+        },
       ],
     });
 
     const project = projectData.get({ plain: true });
-
-    res.render('project', {
+    console.log("project - dashboard",project)
+    res.render('comment', {
       ...project,
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log('error', err);
     res.status(500).json(err);
   }
 });
 
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
+  console.log("Redirect to dashboard")
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {

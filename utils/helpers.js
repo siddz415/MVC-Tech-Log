@@ -1,6 +1,7 @@
 module.exports = {
     format_date: (date) => {
-      // Format date as MM/DD/YYYY
+      console.log('date', date)
+      // Format date as MM/DD/YYYY 
       return date.toLocaleDateString();
     },
     format_amount: (amount) => {
