@@ -1,9 +1,6 @@
 async function deleteFormHandler(event) {
   event.preventDefault();
   
-  if (event.target.tagName !== 'BUTTON') {
-    return;
-  }
   const id = event.target.getAttribute('data-id')
 
   const response = await fetch(`/api/posts/${id}`, {
@@ -19,4 +16,4 @@ async function deleteFormHandler(event) {
 
 }
 
-document.querySelector('.project-list').addEventListener('click', deleteFormHandler);
+document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);

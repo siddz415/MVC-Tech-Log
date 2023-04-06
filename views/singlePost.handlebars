@@ -14,9 +14,17 @@
   </div>
 </form>
 {{!-- {{/if}} --}}
+<div class="meta">
+  {{user.username}} on {{date_created}}
+</div>
+<div class="text">
+  {{#each comments}}
+  <ul>{{comment_text}}</ul>
+  
+  {{/each}}
+</div>
+{{!-- {{> comments project.comments}} --}}
 
-{{!-- {{> comments project.comments}}
-
-{{#if loggedIn}} --}}
+{{!-- {{#if loggedIn}} --}}
 <script src="/js/comment.js"></script>
 {{!-- {{/if}} --}}
