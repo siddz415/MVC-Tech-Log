@@ -77,6 +77,45 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+router.get("/edit/:id", withAuth, (req, res) => {
+  Project.findByPk(req.params.id, {
+    attributes: ["id", "name", "description", "date_created",],
+
+    include: [
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "user_id", "project_id", "date_created"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+
+      {
+        model: User,
+        attributes: ["username"],
+      },
+
+    ],
+  })
+    .then((dbProjectData) => {
+      if (dbProjectData) {
+        const post = dbProjectData.get({ plain: true });
+        console.log('post', post);
+        res.render("editPost", {  //pubic js file
+          post,
+          loggedIn: true,
+        });
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
