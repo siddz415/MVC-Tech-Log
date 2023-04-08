@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   Project.update(
     {
-      title: req.body.title,
+      name: req.body.title,
       description: req.body.description,
 
     },
