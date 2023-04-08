@@ -16,29 +16,30 @@ router.post('/', async (req, res) => {
 });
 
 // /edit/:id
-router.put('/edit/:id', async(req, res) => {Project.update(
-  {
-    title: req.body.title,
-    description: req.body.description,
-    
-  },
-  {
-    where: {
-      id: req.params.id,
+router.put('/:id', async (req, res) => {
+  Project.update(
+    {
+      title: req.body.title,
+      description: req.body.description,
+
     },
-  }
-)
-  .then((dbProjectData) => {
-    if (!dbProjectData) {
-      res.status(404).json({ message: "No Post found with this id" });
-      return;
+    {
+      where: {
+        id: req.params.id,
+      },
     }
-    res.json(dbProjectData);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+  )
+    .then((dbProjectData) => {
+      if (!dbProjectData) {
+        res.status(404).json({ message: "No Post found with this id" });
+        return;
+      }
+      res.json(dbProjectData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 
 })
 
