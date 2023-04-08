@@ -6,7 +6,7 @@
   <form class="edit-post-form">
     <div>
       <input name="post-name" type="text" value="{{post.name}}" />
-      <span>({{{format_url post.post_url}}})</span>
+      {{!-- <span>({{{format_url post.post_url}}})</span> --}}
     </div>
     <div>
       <a class="edit" href="/post/edit/{{id}}">{{post.comments.length}} {{format_plural

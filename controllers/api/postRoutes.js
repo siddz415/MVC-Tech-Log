@@ -15,6 +15,33 @@ router.post('/', async (req, res) => {
   }
 });
 
+// /edit/:id
+router.put('/edit/:id', async(req, res) => {Project.update(
+  {
+    title: req.body.title,
+    description: req.body.description,
+    
+  },
+  {
+    where: {
+      id: req.params.id,
+    },
+  }
+)
+  .then((dbProjectData) => {
+    if (!dbProjectData) {
+      res.status(404).json({ message: "No Post found with this id" });
+      return;
+    }
+    res.json(dbProjectData);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+
+})
+
 router.delete('/:id', async (req, res) => {
   try {
     const projectData = await Project.destroy({
