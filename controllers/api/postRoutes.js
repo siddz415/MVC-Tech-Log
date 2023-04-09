@@ -59,6 +59,7 @@ router.delete('/:id', async (req, res) => {
 
     res.status(200).json(projectData);
   } catch (err) {
+    console.log('err', err)
     res.status(500).json(err);
   }
 });

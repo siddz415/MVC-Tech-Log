@@ -41,6 +41,22 @@ router.post("/", withAuth, (req, res) => {
   }
 });
 
+router.put("/edit/id", withAuth, (req, res) => {
+  if (req.session) {
+    Comment.create({
+      comment_text: req.body.comment_text,
+      project_id: req.body.blog_id,
+      user_id: req.session.user_id,
+    })
+      // respond with the created comment in JSON format
+      .then((dbcommentData) => res.json(dbcommentData))
+      .catch((err) => {
+        console.log(err);
+        res.status(400).json(err);
+      });
+  }
+});
+
 // defines the DELETE route
 router.delete("/:id", withAuth, (req, res) => {
   // deletes the comment with the ID specified in the request parameters
