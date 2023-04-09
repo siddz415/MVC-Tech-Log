@@ -13,15 +13,15 @@
             <textarea name="post-desc" value="{{project.description}}"></textarea>
         </div>
     <div>
-      <a class="edit" href="/project/edit/{{id}}">{{post.comments.length}} {{format_plural
-        post.comments.length}}</a>
+      {{!-- <a class="edit" href="/post/edit/{{id}}">{{post.comments.length}} {{format_plural
+        post.comments.length}}</a> --}}
     </div>
     <button type="submit">Edit post</button>
     
   </form>
 </article>
 
-{{!-- <form class="comment-form">
+ <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
   </div>
@@ -29,7 +29,7 @@
   <div>
     <button type="submit">edit comment</button>
   </div>
-</form> --}}
+</form> 
 
 {{> comment post.comments}}
 

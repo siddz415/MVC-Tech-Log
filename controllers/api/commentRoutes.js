@@ -43,11 +43,18 @@ router.post("/", withAuth, (req, res) => {
 
 router.put("/edit/id", withAuth, (req, res) => {
   if (req.session) {
-    Comment.create({
+    Comment.update(
+      {
       comment_text: req.body.comment_text,
       project_id: req.body.blog_id,
       user_id: req.session.user_id,
-    })
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    )
       // respond with the created comment in JSON format
       .then((dbcommentData) => res.json(dbcommentData))
       .catch((err) => {
