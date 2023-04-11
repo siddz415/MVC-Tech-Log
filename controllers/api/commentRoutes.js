@@ -41,7 +41,7 @@ router.post("/", withAuth, (req, res) => {
   }
 });
 
-router.put("/edit/id", withAuth, (req, res) => {
+router.put("/edit/:id", withAuth, (req, res) => {
   if (req.session) {
     Comment.update(
       {
