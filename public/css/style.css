@@ -162,3 +162,7 @@ img {
   align-content: flex-start;
   align-items: center;
 }
+
+.project {
+  width: 100%;
+}

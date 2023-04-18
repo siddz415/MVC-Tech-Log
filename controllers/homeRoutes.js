@@ -104,7 +104,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
         console.log('post', post);
         res.render("editPost", {  //pubic js file
           post,
-          loggedIn: true,
+          logged_in: true,
         });
       } else {
         res.status(404).end();

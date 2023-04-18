@@ -11,8 +11,7 @@ async function commentFormHandler(event) {
     const response = await fetch(`/api/comments/edit/${comment_id}`, {
       method: 'PUT',
       body: JSON.stringify({
-        comment_id,
-        comment_text
+        comment_text,
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -27,7 +26,7 @@ async function commentFormHandler(event) {
   }
 }
 
-document.querySelector('.edit-comment-form').addEventListener('submit', commentFormHandler);
+
 
 async function addCommentFormHandler(event) {
   event.preventDefault();
@@ -39,7 +38,7 @@ async function addCommentFormHandler(event) {
   ];
   console.log('comment_text', comment_text, project_id)
   if (comment_text) {
-    const response = await fetch(`/api/comments/${project_id}`, {
+    const response = await fetch(`/api/comments/`, {
       method: 'POST',
       body: JSON.stringify({
         project_id,
@@ -59,3 +58,5 @@ async function addCommentFormHandler(event) {
 }
 
 document.querySelector('.comment-form').addEventListener('submit', addCommentFormHandler);
+
+document.querySelector('.edit-comment-form').addEventListener('submit', commentFormHandler);
